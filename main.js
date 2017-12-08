@@ -6,8 +6,13 @@ function generateNamePairs() {
       .getElementById('names-input')
       .value
       .split('\n')
-      .filter(name => name) 
-      .map(line => line.split(',').map(word => word.trim()))
+      .filter(line => line) 
+      .map(line => {
+        return line
+          .split(',')
+          .map(word => word.trim())
+          .filter(word => word)
+      })
   );
   let nameValues = cloneDeep(nameKeys);
 
@@ -28,7 +33,7 @@ function generateNamePairs() {
 
   const resultString = Object.keys(results).reduce((accum, key) => {
     return accum +
-      '<span class="left">' + key + ':</span>' +
+      '<span class="left">' + key + ':</span> ' +
       '<span class="right">' + results[key] + '</span>' +
       '<br/>';
   }, '')
