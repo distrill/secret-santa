@@ -6,8 +6,13 @@ function generateNamePairs() {
       .getElementById('names-input')
       .value
       .split('\n')
-      .filter(name => name) 
-      .map(line => line.split(',').map(word => word.trim()))
+      .filter(line => line) 
+      .map(line => {
+        return line
+          .split(',')
+          .map(word => word.trim())
+          .filter(word => word)
+      })
   );
   let nameValues = cloneDeep(nameKeys);
 
