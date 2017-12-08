@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+  <title>Secret Santa</title>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+  <script src="./main.js"></script>
+</head>
+<body>
+  <div>Secret Santa!</div>
+  <div>Enter the names of participants below, separated by comma or newline</div>
+  <form onsubmit="generateNamePairs(); return false">
+    <div>
+      <textarea id="names-input"></textarea>
+    </div>
+    <div>
+      <input type="submit" value="Go!"/>
+    </div>
+  </form>
+  <div id="result-content"></div>
+</body>
