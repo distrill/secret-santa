@@ -1,7 +1,14 @@
 const { cloneDeep, without, sample, flatten } = _
 
 function generateNamePairs() {
-  const nameKeys = flatten(document.getElementById('names-input').value.split('\n').map(line => line.split(',').map(word => word.trim())));
+  const nameKeys = flatten(
+    document
+      .getElementById('names-input')
+      .value
+      .split('\n')
+      .filter(name => name) 
+      .map(line => line.split(',').map(word => word.trim()))
+  );
   let nameValues = cloneDeep(nameKeys);
 
   const results = nameKeys.reduce((accum, key) => {
