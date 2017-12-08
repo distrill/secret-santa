@@ -1,19 +1,63 @@
 <!DOCTYPE html>
-<head>
-  <title>Secret Santa</title>
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
-  <script src="./main.js"></script>
-</head>
-<body>
-  <div>Secret Santa!</div>
-  <div>Enter the names of participants below, separated by comma or newline</div>
-  <form onsubmit="generateNamePairs(); return false">
-    <div>
-      <textarea id="names-input"></textarea>
+<html>
+  <head>
+    <title>Secret Santa</title>
+    <link rel="stylesheet" type="text/css" href="./stylesheet.css"/>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="heading">
+        <div>Secret Santa!</div>
+        <div>Enter the names of participants below, separated by comma or newline.</div>
+      </div>
+      <form onsubmit="generateNamePairs(); return false">
+        <div>
+          <textarea id="names-input" class="names-input"></textarea>
+        </div>
+        <div>
+          <input type="submit" value="Go!" class="btn btn-danger"/>
+        </div>
+      </form>
+      <div id="result-content" class="result-content">...rink...</div>
     </div>
-    <div>
-      <input type="submit" value="Go!"/>
+
+
+    <!--   snowflake bullshit   -->
+    <div class="snowflakes" aria-hidden="true">
+      <div class="snowflake">
+      ❄
+      </div>
+      <div class="snowflake">
+      ❅
+      </div>
+      <div class="snowflake">
+      ❆
+      </div>
+      <div class="snowflake">
+      ❄
+      </div>
+      <div class="snowflake">
+      ❅
+      </div>
+      <div class="snowflake">
+      ❆
+      </div>
+      <div class="snowflake">
+      ❄
+      </div>
+      <div class="snowflake">
+      ❅
+      </div>
+      <div class="snowflake">
+      ❆
+      </div>
+      <div class="snowflake">
+      ❄
+      </div>
     </div>
-  </form>
-  <div id="result-content"></div>
-</body>
+    <!--  end snowflake nonsense-->
+  </body>
+</html>

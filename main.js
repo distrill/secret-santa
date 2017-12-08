@@ -33,7 +33,7 @@ function generateNamePairs() {
 
   const resultString = Object.keys(results).reduce((accum, key) => {
     return accum +
-      '<span class="left">' + key + ':</span>' +
+      '<span class="left">' + key + ':</span> ' +
       '<span class="right">' + results[key] + '</span>' +
       '<br/>';
   }, '')
